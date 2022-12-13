@@ -1,0 +1,48 @@
+[
+  {
+    "Id": 1,
+    "Name": "Nicolas Chourot",
+    "Email": "Nicolas.Chourot@clg.qc.ca",
+    "Password": "password",
+    "AvatarGUID": "8b33d000-0130-11ed-b7c1-9bbd15ec1d8c",
+    "VerifyCode": "verified",
+    "Created": 1601500396
+  },
+  {
+    "Id": 2,
+    "Name": "Nicolas Chourot",
+    "Email": "nicolaschourot@videotron.ca",
+    "Password": "********",
+    "Created": 1666908912,
+    "VerifyCode": "verified",
+    "AvatarGUID": "",
+    "AvatarURL": ""
+  },
+  {
+    "Id": 3,
+    "Name": "Kesava",
+    "Email": "keke_023@hotmail.com",
+    "Password": "123456",
+    "AvatarGUID": "93b0aeb0-72aa-11ed-b1d9-51d6cdd8e133",
+    "Created": 1670031247,
+    "VerifyCode": "verified"
+  },
+  {
+    "Id": 4,
+    "Name": "Code",
+    "Email": "ghost930725@hotmail.com",
+    "Password": "123456",
+    "AvatarGUID": "e8aecd50-7b30-11ed-a61f-01c1fc7beeb6",
+    "Created": 1670056940,
+    "VerifyCode": "verified"
+  },
+  {
+    "Id": 5,
+    "Name": "keke",
+    "Email": "kesava.c.lussier@gmail.com",
+    "Password": "123456",
+    "AvatarGUID": "973037d0-7b16-11ed-affe-19b2625a947b",
+    "Created": 1670957247,
+    "VerifyCode": "verified"
+  }
+]
