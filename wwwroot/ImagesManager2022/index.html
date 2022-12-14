@@ -269,6 +269,7 @@
         const periodicRefreshPeriod = 15;
         let holdCheckETag = false;
         let currentETag = "";
+        let currentUserETag = "";
         let createMode = true;
         let searchCategory = "";
         let searchTitle = "";
@@ -291,7 +292,9 @@
 
 
         HEAD(checkETag, error);
+       
         setInterval(() => { HEAD(checkETag, error) }, periodicRefreshPeriod * 1000);
+      
 
 
         $('#password_input, #password_confirmation_input').on('keyup', function () {
@@ -341,12 +344,17 @@
             if (!holdCheckETag && ETag != currentETag) {
                 currentETag = ETag;
                 getImagesList();
+                getUsersList();
             }
         }
 
         function refreshUsersList(users) {
             user = getConnectedUser();
-
+            $('#search-choice').empty();
+            
+                        
+            $('#search-choice').append('<option value="Tous les usagers">Tous les usagers</option>');
+            $('#search-choice').append('<option value="Mes images">Mes images</option>');
             /*console.log(users);*/
             if (user) {
                 users.forEach(users => {

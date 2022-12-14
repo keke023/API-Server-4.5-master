@@ -7,7 +7,7 @@ const Gmail = require("../gmail");
 module.exports =
     class AccountsController extends require('./Controller') {
         constructor(HttpContext,) {
-            super(HttpContext, new usersRepository(), true /* read authorisation */);
+            super(HttpContext, new usersRepository(), false /* read authorisation */);
             this.imageRepository = new ImagesRepository();
         }
         //acounts/index/id
@@ -111,12 +111,12 @@ module.exports =
                 }
                 if (this.repository != null) {
                     let updateResult = this.repository.update(user);
+                    this.imageRepository.newETag();
                     if (updateResult == this.repository.updateResult.ok) {
                         this.HttpContext.response.ok();
                         if (user.Email != foundedUser.Email) {
                             user.VerifyCode = utilities.makeVerifyCode(6);
                             this.repository.update(user);
-                            this.imageRepository.newETag();
                             this.sendVerificationEmail(user);
                         }
                     }
@@ -150,6 +150,7 @@ module.exports =
                 console.log(indexToDelete);
             }
             this.imageRepository.removeByIndex(indexToDelete);
+            this.imageRepository.newETag();
            super.remove(id);
         }
     }
